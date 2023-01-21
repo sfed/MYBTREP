@@ -11,9 +11,11 @@ int main() {
   fgets(nom_prenom, sizeof(nom_prenom), stdin);
 
   do {
+    genre = ' ';
+    result = 0;
     printf("Donnez votre genre (h/f ou H/F): ");
-    scanf("%1c", &genre);
-  } while (genre != 'H' && genre != 'h' && genre != 'F' && genre != 'f');
+    result = scanf("%1c", &genre);
+  } while ((genre != 'H' && genre != 'h' && genre != 'F' && genre != 'f') || result != 1 || genre == ' ');
 
   
   do {
